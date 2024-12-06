@@ -111,8 +111,8 @@ public class ProjectServiceImplementation implements ProjectService {
         if(!project.getTeams().contains(user)){
             project.getChat().getUsers().add(user);
             project.getTeams().add(user);
+            projectRepository.save(project);
         }
-        projectRepository.save(project);
     }
 
     @Override
